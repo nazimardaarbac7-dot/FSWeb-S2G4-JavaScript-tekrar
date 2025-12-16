@@ -89,37 +89,46 @@ function CemberinAlani(yaricap) {
 
 /*  (oto test yok) sayilar dizisi içinde kaç adet sayı olduğunu konsola yazdırın */
 
-let ucetambolunenler,
+let ucetambolunenler =[],
   enkucuk,
   enbuyuk,
   ucebolunenlerintoplami,
-  besyuzdenkucuksayilar,
-  siralisayilar,
+  besyuzdenkucuksayilar=[],
+  siralisayilar=[],
   tekraredensayilar;
 
-// 3a çözümü
+  // 3a çözümü
+  enkucuk=sayilar[0];
+  enbuyuk=sayilar[0];
+ for(let i=0;i<sayilar.length;i++){
+  if(sayilar[i]>enbuyuk)enbuyuk=sayilar[i];
+  if(sayilar[i]<enkucuk)enkucuk=sayilar[i];
+ }
 
-/* kodlar buraya */
 
 // 3b çözümü:
 
-/* kodlar buraya */
+ sayilar.forEach((x)=>{
+  if(x%3===0)ucetambolunenler.push(x);
+ })
 
 // 3c çözümü:
 
-/* kodlar buraya */
+ucebolunenlerintoplami.reduce((acc,x)=>{
+ return acc+x;
+},0)
 
 // 3d çözümü
 
-/* kodlar buraya */
+besyuzdenkucuksayilar=sayilar.filter((x)=>x<500);
 
 // 3e çözümü
 
-/* kodlar buraya */
+siralisayilar=besyuzdenkucuksayilar.sort((x,y)=>y-x);
 
 // 3f çözümü
 
-/* kodlar buraya */
+  
 
 /*  Bu satırın aşağısındaki kodları lütfen değiştirmeyin  */
 
