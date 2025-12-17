@@ -95,7 +95,7 @@ let ucetambolunenler =[],
   ucebolunenlerintoplami,
   besyuzdenkucuksayilar=[],
   siralisayilar=[],
-  tekraredensayilar;
+  tekraredensayilar=[];
 
   // 3a çözümü
   enkucuk=sayilar[0];
@@ -114,7 +114,7 @@ let ucetambolunenler =[],
 
 // 3c çözümü:
 
-ucebolunenlerintoplami.reduce((acc,x)=>{
+ucebolunenlerintoplami=ucebolunenlerintoplami.reduce((acc,x)=>{
  return acc+x;
 },0)
 
@@ -124,9 +124,25 @@ besyuzdenkucuksayilar=sayilar.filter((x)=>x<500);
 
 // 3e çözümü
 
-siralisayilar=besyuzdenkucuksayilar.sort((x,y)=>y-x);
+siralisayilar=besyuzdenkucuksayilar.sort((x,y)=>x-y);
 
 // 3f çözümü
+let tekrar = {};
+for (let i = 0; i < sayilar.length; i++) {
+    let sayi = sayilar[i];
+    if (tekrar[sayi] != null) {
+        tekrar[sayi]++;
+    } else {
+        tekrar[sayi] = 1;
+    }
+}
+tekraredensayilar = [];
+for (let key in tekrar) {
+    if (tekrar[key] > 1) {
+        tekraredensayilar.push(`${key} sayisi ${tekrar[key]} kere yazılmış`);
+    }
+}
+
 
   
 
